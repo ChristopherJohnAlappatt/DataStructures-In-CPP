@@ -2,11 +2,10 @@
 
 using namespace std;
 
-int factorial(int n) {
+void fun(int n) {
     if (n > 0) {
-        return (factorial(n - 1) * n);
-    } else if (n <= 1) {
-        return 1;
+        fun(n - 1);
+        cout << n << endl;
     }
 }
 
@@ -14,7 +13,6 @@ int main() {
     int n;
     cout << "Enter a number : " << endl;
     cin >> n;
-    cout << factorial(n) << endl;
+    fun(n);
     return 0;
 }
-

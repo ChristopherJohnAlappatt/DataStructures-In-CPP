@@ -2,19 +2,19 @@
 
 using namespace std;
 
-int factorial(int n) {
+int fun(int n) {
+    static int x = 0;
     if (n > 0) {
-        return (factorial(n - 1) * n);
-    } else if (n <= 1) {
-        return 1;
+        x++;
+        return (fun(n - 1) + x);
     }
+    return 0;
 }
 
 int main() {
     int n;
     cout << "Enter a number : " << endl;
     cin >> n;
-    cout << factorial(n) << endl;
+    cout << fun(n) << endl;
     return 0;
 }
-

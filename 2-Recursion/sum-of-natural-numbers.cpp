@@ -2,19 +2,17 @@
 
 using namespace std;
 
-int factorial(int n) {
+int sumOfNaturalNumbers(int n) {
     if (n > 0) {
-        return (factorial(n - 1) * n);
-    } else if (n <= 1) {
-        return 1;
+        return (n + sumOfNaturalNumbers(n - 1));
     }
+    return 0;
 }
 
 int main() {
     int n;
     cout << "Enter a number : " << endl;
     cin >> n;
-    cout << factorial(n) << endl;
+    cout << sumOfNaturalNumbers(n) << endl;
     return 0;
 }
-
